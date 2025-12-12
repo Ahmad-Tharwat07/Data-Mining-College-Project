@@ -8,7 +8,11 @@ from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-data = pd.read_csv('hatla2ee_scraped_data.csv')
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(script_dir, 'hatla2ee_scraped_data.csv')
+data = pd.read_csv(data_path)
 df = data.copy()
 df.head()
 
